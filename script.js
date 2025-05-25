@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.querySelector('.lightbox-img');
   const closeBtn = document.querySelector('.lightbox-close');
 
-  const totalImages = 7;
+  const totalImages = 11;
   for (let i = 1; i <= totalImages; i++) {
     const wrapper = document.createElement('div');
     wrapper.classList.add('gallery-item');
@@ -33,25 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.style.display = 'flex';
     });
   }
-  for (let i = 1; i <= totalImages; i++) {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('gallery-item');
-
-    const img = document.createElement('img');
-    img.src = `images/gallery-${i}.jpg`;
-    img.alt = `Gallery Image ${i}`;
-
-    wrapper.appendChild(img);
-    gallery.appendChild(wrapper);
-
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
-  }
-
-  
-  
+ 
 
   // Close lightbox on close icon or backdrop click
   closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
